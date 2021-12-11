@@ -11,7 +11,7 @@ require_once 'Song.php';
 
 class Seeder
 {
-    public static function minecraft(): OST
+    public static function getData()
     {
         $minecraftTracks = array(
             new Song(1, 'Cat', 'Daniel Rosenfeld', 19, 186),
@@ -20,11 +20,6 @@ class Seeder
             new Song(4, 'Death', 'Daniel Rosenfeld', 6, 41)
         );
 
-        return new OST(1, "Minecraft", "Minecraft", 2008, $minecraftTracks);
-    }
-
-    public static function stardewvalley(): OST
-    {
         $stardewvalleyTracks = array(
             new Song(5, 'It\'s a big world outside', 'ConcernedApe', 5, 236),
             new Song(6, 'The Valley comes alive', 'ConcernedApe', 6, 263),
@@ -32,11 +27,6 @@ class Seeder
             new Song(8, 'Tropicala', 'ConcernedApe', 15, 202)
         );
 
-        return new OST(2, 'Stardew Valley', 'Stardew Valley', 2017, $stardewvalleyTracks);
-    }
-
-    public static function mariokart(): OST
-    {
         $mariokartTracks = array(
             new Song(10,'Mushroom Gorge','Nintendo',1,115),
             new Song(9,'Coconut Mall','Nintendo',2,131),
@@ -44,6 +34,12 @@ class Seeder
             new Song(12,'Rainbow Road','Nintendo',4,83)
         );
 
-        return new OST(3, 'Mario Kart Wii', 'Wii Sports', 2006, $mariokartTracks);
+        $minecraft = new OST(1, "Minecraft", "Minecraft", 2008, $minecraftTracks);
+        $stardewvalley = new OST(2, 'Stardew Valley', 'Stardew Valley', 2017, $stardewvalleyTracks);
+        $mariokart = new OST(3, 'Mario Kart Wii', 'Mario Kart Wii', 2006, $mariokartTracks);
+
+        $list = array('minecraft'=>$minecraft,'stardevalley'=>$stardewvalley,'mariokart'=>$mariokart);
+
+        return $list;
     }
 }

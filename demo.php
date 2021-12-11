@@ -6,6 +6,12 @@ use HTLW3R\VideoGaming\Seeder\Seeder;
 
 require_once 'Seeder.php';
 
-$ost = Seeder::minecraft();
+$osts = Seeder::getData();
 
-echo (json_encode($ost));
+header('Content-Type: application/json; charset=utf-8');
+
+if (isset($_GET['name'])) {
+    echo json_encode($osts[$_GET['name']]);
+}else {
+    echo json_encode($osts);
+}
