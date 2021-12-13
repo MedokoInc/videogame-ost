@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteRule "^osts/?$" "demo.php" [NC]
+RewriteRule "^osts/([A-Za-z0-9-]+)/?$" "demo.php?name=$1" [NC]
+RewriteRule "^osts/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)?$" "demo.php?name=$1&track=$2" [NC]
