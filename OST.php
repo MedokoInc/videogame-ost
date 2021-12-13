@@ -32,6 +32,14 @@ class OST implements \JsonSerializable
         $this->trackList = $trackList;
     }
 
+    /**
+     * @return Song[]
+     */
+    public function getTrackList()
+    {
+        return $this->trackList;
+    }
+
     public function jsonSerialize()
     {
         return [
